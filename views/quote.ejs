@@ -5,8 +5,11 @@
     <body>
         <h1>Quotation Form</h1>
         <div class="containter-fluid">
-            <form name="contact-details">
+            <form name="contact-details" action="API/new_client" method="post">
                 <div class="personal-info">
+                    <div class="business-name">
+                        <input id="name" name="name" placeholder="Business Name">
+                    </div>
                     <div class="contact-name">
                         <input id="fname" name="fname" placeholder="First Name">
                         <input id="lname" name="lname" placeholder="Last Name">
@@ -31,7 +34,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="Submit" name="submit" form="contact-details">Next</button>
+                    <input type="submit" name="submit"/>
                 </div>
             </form>
         </div>

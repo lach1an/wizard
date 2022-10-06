@@ -7,16 +7,17 @@ function newClient(client, callback){
     base('Client Details').create([
         {
             "fields":{
-                "Name" : "${client.ID}",
-                "Contact": "${client.name}",
-                "Phone Number" : "${client.phone}",
-                "Email" : "${client.email}",
-                "Address" : "${client.address}",
-                "City" : "${client.city}",
-                "Postcode" : "${client.city}",
+                "Name" : client.name,
+                "Contact": client.name,
+                "Phone Number" : client.phone,
+                "Email" : client.email,
+                "Address" : client.address,
+                "City" : client.city,
+                "Postcode" : client.pCode,
                 "Assignee" : {
                     "email" : "lachlan.mcintyre@hotmail.co.uk"
-                }
+                },
+                "Status": "Todo"
             }
         }
     ], function(err, records){
@@ -24,7 +25,7 @@ function newClient(client, callback){
         // check for errors
         if(err){
             console.log(err);
-            throw err;
+            callback(err, null);
         }
         // return the new record ID to the callback
         else{
@@ -33,6 +34,15 @@ function newClient(client, callback){
 
     });
 
+
+
+
+}
+
+// export DAO functions for controller use
+module.exports = {
+
+    newClient
 
 
 
