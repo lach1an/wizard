@@ -33,7 +33,7 @@ app.get("/login", (req, res) => {
 });
 
 //route for register
-app.get("/quote", (req, res) => {
+app.get("wizard/quote", (req, res) => {
   res.render("quote");
 });
 
